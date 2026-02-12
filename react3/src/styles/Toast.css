@@ -15,11 +15,12 @@
 }
 
 .toast-box {
-  background: #ffffff;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
   border-radius: 12px;
   padding: 2.5rem 3rem;
   text-align: center;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
   animation: popIn 0.3s ease;
   max-width: 400px;
   width: 90%;

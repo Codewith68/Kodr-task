@@ -23,21 +23,23 @@
 .neon-select,
 .neon-textarea {
   width: 100%;
-  padding: 0.75rem 1rem;
+  padding: 0.875rem 1rem;
   font-family: var(--font-body);
   font-size: 0.95rem;
   color: var(--text-main);
-  background: #ffffff;
+  background: #222222;
   border: 1px solid var(--border-light);
-  border-radius: 6px;
+  border-radius: 8px;
   outline: none;
-  transition: border-color 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .neon-input:focus,
 .neon-select:focus,
 .neon-textarea:focus {
-  border-color: var(--accent-color);
+  border-color: #666;
+  background: #2a2a2a;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.05);
 }
 
 .neon-input::placeholder,
@@ -71,12 +73,12 @@
   position: relative;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.6rem;
   cursor: pointer;
-  padding: 0.5rem 1rem;
-  border: 1px solid var(--border-light);
+  padding: 0.5rem 0.75rem; /* Reduced padding for minimal look */
+  /* border: 1px solid var(--border-light); No border for minimal style, just text and icon */
   border-radius: 6px;
-  background: #fff;
+  background: transparent;
   transition: all 0.2s ease;
   font-size: 0.9rem;
   user-select: none;
@@ -84,18 +86,41 @@
 }
 
 .checkbox-item:hover {
-  border-color: #bbb;
   color: var(--text-main);
 }
 
 .checkbox-item.checked {
-  background: var(--accent-color);
-  border-color: var(--accent-color);
-  color: #fff;
+  /* Minimal style: just change text color or icon color */
+  color: var(--checkbox-color);
+  font-weight: 500;
+  background: transparent; /* No background needed for minimal */
+  border-color: transparent; 
+}
+
+/* Custom Checkbox Box (simulated with ::before) */
+.checkbox-item::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--border-light);
+  border-radius: 3px;
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+.checkbox-item:hover::before {
+  border-color: #666;
+}
+
+.checkbox-item.checked::before {
+  background: var(--checkbox-color);
+  border-color: var(--checkbox-color);
+  box-shadow: 0 0 5px rgba(255, 183, 3, 0.4);
 }
 
 .checkbox-item input[type="checkbox"] {
-  display: none; /* Hide default checkbox for cleaner look, or style it */
+  display: none;
 }
 
 /* ── File Upload ── */
@@ -115,7 +140,7 @@
   font-size: 0.8rem;
   font-weight: 500;
   color: var(--text-main);
-  background: #f5f5f5;
+  background: #2a2a2a;
   border: 1px solid var(--border-light);
   border-radius: 6px;
   cursor: pointer;
@@ -123,8 +148,8 @@
 }
 
 .file-upload-btn:hover {
-  background: #e5e5e5;
-  border-color: #ccc;
+  background: #333;
+  border-color: #666;
 }
 
 .file-upload-wrapper input[type="file"] {
@@ -164,23 +189,26 @@
   width: 100%;
   padding: 1rem;
   font-family: var(--font-heading);
-  font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: 1px;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
   color: #fff;
-  background: var(--accent-color);
+  background: var(--accent-color); /* Red */
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background 0.2s ease, transform 0.1s ease;
-  margin-top: 1rem;
+  transition: all 0.2s ease;
+  margin-top: 2rem;
+  box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
 }
 
 .submit-btn:hover {
   background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 0, 0, 0.4);
 }
 
 .submit-btn:active {
-  transform: scale(0.99);
+  transform: translateY(0);
 }

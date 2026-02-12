@@ -2,16 +2,17 @@
 
 /* ── Minimal Theme Custom Properties ── */
 :root {
-  --bg-body: #050505;
-  --bg-card: #ffffff;
-  --text-main: #1a1a1a;
-  --text-muted: #666666;
-  --border-light: #e5e5e5;
-  --accent-color: #111111;
-  --accent-hover: #333333;
-  --error-color: #d32f2f;
-  --font-heading: "Inter", -apple-system, sans-serif;
-  --font-body: "Inter", -apple-system, sans-serif;
+  --bg-body: #101010;
+  --bg-card: #161616;
+  --text-main: #e0e0e0;
+  --text-muted: #a0a0a0;
+  --border-light: #333333;
+  --accent-color: #ff0000; /* Red for primary actions */
+  --accent-hover: #cc0000;
+  --checkbox-color: #ffb703; /* Yellow/Orange for checkboxes */
+  --error-color: #ff4d4d;
+  --font-heading: "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
 }
 
 /* ── Reset & Base ── */

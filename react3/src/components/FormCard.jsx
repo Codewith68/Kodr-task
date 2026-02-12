@@ -127,7 +127,7 @@ function FormCard({ form, errors, onChange, onSkillToggle, onFileChange, onSubmi
 
       {/* Bio */}
       <div className="form-group">
-        <label className="form-label" htmlFor="bio">Apne bare main kuch likho 😂</label>
+        <label className="form-label" htmlFor="bio">Write something about yourself </label>
         <textarea
           id="bio"
           name="bio"
