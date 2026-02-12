@@ -74,7 +74,7 @@ function App() {
 
   return (
     <>
-      <h1 className="app-title" style={{ paddingTop: "2.5rem" }}>
+      <h1 className="app-title">
         KODR TASK FORM
       </h1>
       <p className="app-subtitle">Register your details here</p>

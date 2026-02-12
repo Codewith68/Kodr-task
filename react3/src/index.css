@@ -1,22 +1,17 @@
 @import "tailwindcss";
 
-/* ── Neon Palette Custom Properties ── */
+/* ── Minimal Theme Custom Properties ── */
 :root {
-  --neon-cyan: #00fff5;
-  --neon-magenta: #ff00e5;
-  --neon-purple: #b026ff;
-  --neon-blue: #4d4dff;
-  --neon-green: #39ff14;
-  --neon-yellow: #fff200;
-  --neon-orange: #ff6b00;
-  --bg-dark: #0a0a1a;
-  --bg-card: rgba(15, 15, 40, 0.85);
-  --bg-input: rgba(10, 10, 30, 0.9);
-  --border-glow: rgba(0, 255, 245, 0.25);
-  --text-primary: #e0e0ff;
-  --text-muted: #8888aa;
-  --font-heading: "Orbitron", sans-serif;
-  --font-body: "Rajdhani", sans-serif;
+  --bg-body: #050505;
+  --bg-card: #ffffff;
+  --text-main: #1a1a1a;
+  --text-muted: #666666;
+  --border-light: #e5e5e5;
+  --accent-color: #111111;
+  --accent-hover: #333333;
+  --error-color: #d32f2f;
+  --font-heading: "Inter", -apple-system, sans-serif;
+  --font-body: "Inter", -apple-system, sans-serif;
 }
 
 /* ── Reset & Base ── */
@@ -35,62 +30,36 @@ html {
 
 body {
   font-family: var(--font-body);
-  background: var(--bg-dark);
-  color: var(--text-primary);
+  background: var(--bg-body);
+  color: var(--text-main);
   min-height: 100vh;
-  overflow-x: hidden;
   line-height: 1.6;
-}
-
-/* animated scanline bg */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 2px,
-    rgba(0, 255, 245, 0.015) 2px,
-    rgba(0, 255, 245, 0.015) 4px
-  );
-}
-
-/* subtle grid pattern */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  background-image:
-    linear-gradient(rgba(0, 255, 245, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 255, 245, 0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #root {
-  position: relative;
-  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 /* ── Scrollbar ── */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--bg-dark);
+  background: var(--bg-body);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--neon-cyan);
-  border-radius: 3px;
-  box-shadow: 0 0 6px var(--neon-cyan);
+  background: #333;
+  border-radius: 4px;
 }
 
 /* ── Selection ── */
 ::selection {
-  background: var(--neon-magenta);
+  background: #333;
   color: #fff;
 }
