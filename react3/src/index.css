@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+/* ── Neon Palette Custom Properties ── */
+:root {
+  --neon-cyan: #00fff5;
+  --neon-magenta: #ff00e5;
+  --neon-purple: #b026ff;
+  --neon-blue: #4d4dff;
+  --neon-green: #39ff14;
+  --neon-yellow: #fff200;
+  --neon-orange: #ff6b00;
+  --bg-dark: #0a0a1a;
+  --bg-card: rgba(15, 15, 40, 0.85);
+  --bg-input: rgba(10, 10, 30, 0.9);
+  --border-glow: rgba(0, 255, 245, 0.25);
+  --text-primary: #e0e0ff;
+  --text-muted: #8888aa;
+  --font-heading: "Orbitron", sans-serif;
+  --font-body: "Rajdhani", sans-serif;
+}
+
+/* ── Reset & Base ── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-dark);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* animated scanline bg */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 255, 245, 0.015) 2px,
+    rgba(0, 255, 245, 0.015) 4px
+  );
+}
+
+/* subtle grid pattern */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(0, 255, 245, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 245, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--neon-cyan);
+  border-radius: 3px;
+  box-shadow: 0 0 6px var(--neon-cyan);
+}
+
+/* ── Selection ── */
+::selection {
+  background: var(--neon-magenta);
+  color: #fff;
+}

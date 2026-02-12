@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import  { useState } from 'react'
 
 function App() {
   const[data,setData]=useState([
@@ -241,7 +241,7 @@ function DeleteUser(id){
             <h2 className="text-lg font-semibold text-gray-800 capitalize">
               Name:{firstname}
             </h2>
-            <p className="text-gray-600 text-sm mt-1 break-words">
+            <p className="text-gray-600 text-sm mt-1 wrap-break-word">
               Email:{email}
             </p>
             <button

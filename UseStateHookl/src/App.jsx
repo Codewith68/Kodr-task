@@ -3,27 +3,18 @@ import NameCard from "./components/NameCard";
 import UserCard from "./components/UserCard";
 import VisibilityCard from "./components/VisibilityCard";
 
+
 function App() {
   return (
-    <div className="min-h-screen bg-black flex justify-center items-center">
-      <div className="w-full max-w-6xl p-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <CounterCard/>
-          </div>
-          <div  className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <NameCard />
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <UserCard />
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <VisibilityCard />
-          </div>
-        </div>
+    <div className="min-h-screen bg-black p-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <CounterCard />
+        <NameCard />
+        <UserCard />
+        <VisibilityCard />
       </div>
     </div>
-  );
+  )
 }
 
 export default App;
