@@ -24,7 +24,7 @@ export function Cart() {
           <div key={item.id} className="flex gap-4">
             <div className="h-24 w-20 shrink-0 overflow-hidden rounded-md border border-gray-200">
               <img
-                src={item.image}
+                src={item.images[0]}
                 alt={item.name}
                 className="h-full w-full object-cover object-center"
               />
@@ -73,20 +73,20 @@ export function Cart() {
       <div className="border-t border-gray-100 px-6 py-4 bg-gray-50 dark:bg-gray-800 transition-colors">
         {/* Free Shipping Progress */}
         <div className="mb-4">
-             {cartTotal >= 200000 ? (
+             {cartTotal >= 400000 ? (
                  <div className="p-3 bg-green-100 text-green-800 rounded-md text-sm font-medium text-center dark:bg-green-900 dark:text-green-100">
                      🎉 You unlocked FREE SHIPPING!
                  </div>
              ) : (
                  <div>
                      <div className="flex justify-between text-sm mb-1 text-gray-600 dark:text-gray-400">
-                         <span>Add <strong>₹{200000 - cartTotal}</strong> for free shipping</span>
-                         <span>{Math.min(100, (cartTotal / 200000) * 100).toFixed(0)}%</span>
+                         <span>Add <strong>₹{400000 - cartTotal}</strong> for free shipping</span>
+                         <span>{Math.min(100, (cartTotal / 400000) * 100).toFixed(0)}%</span>
                      </div>
                      <div className="h-2 w-full bg-gray-200 rounded-full overflow-hidden dark:bg-gray-700">
                          <div 
                             className="h-full bg-black dark:bg-white transition-all duration-500"
-                            style={{ width: `${(cartTotal / 20000) * 100}%` }}
+                            style={{ width: `${(cartTotal / 400000) * 100}%` }}
                          ></div>
                      </div>
                  </div>

@@ -4,6 +4,7 @@ import { Plus, Heart } from 'lucide-react';
 
 export function ProductCard({ product }) {
   const { addToCart, toggleSaved, savedItems } = useCart();
+
   const { register, handleSubmit, reset } = useForm({
     defaultValues: {
       quantity: 1,
@@ -21,12 +22,13 @@ export function ProductCard({ product }) {
     <div className="group relative bg-white border border-gray-100 overflow-hidden transition-all hover:shadow-lg dark:bg-gray-800 dark:border-gray-700">
       <div className="relative aspect-3/4 overflow-hidden bg-gray-100">
         <img
-          src={product.image}
+          src={product.images[0]}
           alt={product.name}
           className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
         />
+
         <div className="absolute top-4 right-4">
-           {/* Bookmark icon placeholder or functionality */}
+           {/* Bookmark icon functionality */}
            <button 
              onClick={() => toggleSaved(product)}
              className="p-2 bg-white/80 backdrop-blur-sm rounded-full text-gray-500 hover:text-red-500 transition-colors shadow-sm"
@@ -50,7 +52,7 @@ export function ProductCard({ product }) {
 
         {/* Add to Cart Form */}
         <form onSubmit={handleSubmit(onSubmit)} className="mt-4 flex items-center justify-between">
-           {/* Hidden Quantity Input (default 1) - demonstrating useForm */}
+           {/* Hidden Quantity Input (default 1) */}
            <input type="hidden" {...register('quantity')} />
            
            <button

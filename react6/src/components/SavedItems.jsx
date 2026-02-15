@@ -24,7 +24,7 @@ export function SavedItems({ onClose }) {
             <div key={item.id} className="flex gap-4">
               <div className="h-24 w-20 shrink-0 overflow-hidden rounded-md border border-blue-700">
                 <img
-                  src={item.image}
+                  src={item.images[0]}
                   alt={item.name}
                   className="h-full w-full object-cover object-center"
                 />
